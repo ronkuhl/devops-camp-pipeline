@@ -22,7 +22,7 @@ pipeline {
                 }
                 withCredentials([usernamePassword(credentialsId: '<YOUR CREDENTIAL ID NAME>', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     script {
-                        env.BUILD_DB = sh(script: 'python check_harbor_db.py -h $COMMIT_HASH -i $DB_IMAGE_NAME -r $HARBOR_REGISTRY -p $HARBOR_PROJECT -c ${USERNAME}:${PASSWORD}', returnStdout: true).trim()
+                        env.BUILD_DB = sh(script: 'python /root/dso-bootcamp-home/devops-camp-pipeline/check_harbor_db.py -h $COMMIT_HASH -i $DB_IMAGE_NAME -r $HARBOR_REGISTRY -p $HARBOR_PROJECT -c ${USERNAME}:${PASSWORD}', returnStdout: true).trim()
                     }
                 }
                 }
