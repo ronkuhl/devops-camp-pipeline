@@ -10,7 +10,7 @@ pipeline {
         DB_IMAGE_NAME = 'db'
     }
     stages {
-        //TODO: add stages to pipeline
+        //TODO: add stages to pipeline added full path
         stage('Application repository') {
             steps {
                 echo "Cloning application repository"
